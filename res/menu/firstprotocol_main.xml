@@ -1,6 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     
+    <item android:id="@+id/store_logfile" 
+        android:title="@string/StoreLogFile" />
+    
     <item android:id="@+id/action_connect" 
         android:title="@string/Connect" />
+        
+    <item android:id="@+id/reset_logfile" 
+        android:title="@string/ResetLogFile" />
 
 </menu>
