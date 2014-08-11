@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/UpLeft"
             android:src="@drawable/up_left" />
 
         <uni.oulu.fingertracker.ui.DirectionImageButton
@@ -24,6 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/Up"
             android:src="@drawable/up" />
 
         <uni.oulu.fingertracker.ui.DirectionImageButton
@@ -31,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/UpRight"
             android:src="@drawable/up_right" />
 
     </LinearLayout>
@@ -46,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/Left"
             android:src="@drawable/left" />
 
         <uni.oulu.fingertracker.ui.DirectionImageButton
@@ -60,6 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/Right"
             android:src="@drawable/right" />
 
     </LinearLayout>
@@ -75,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/DownLeft"
             android:src="@drawable/down_left" />
 
         <uni.oulu.fingertracker.ui.DirectionImageButton
@@ -82,6 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/Down"
             android:src="@drawable/down" />
 
         <uni.oulu.fingertracker.ui.DirectionImageButton
@@ -89,6 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/DownRight"
             android:src="@drawable/down_right" />
 
     </LinearLayout>
@@ -104,6 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/Confirm"
             android:src="@drawable/confirmation" />
         
         <uni.oulu.fingertracker.ui.DirectionImageButton
@@ -111,6 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:tag="@string/Reject"
             android:src="@drawable/cancel" />
 
     </LinearLayout>
