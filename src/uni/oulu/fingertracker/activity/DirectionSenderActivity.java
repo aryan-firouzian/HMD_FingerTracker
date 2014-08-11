@@ -16,6 +16,7 @@ public class DirectionSenderActivity extends Activity implements OnClickListener
 
 	private HmdBtCommunicator mBtComm = null;
 	private String devaddress = null;
+	private String TextContent = "";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +105,14 @@ public class DirectionSenderActivity extends Activity implements OnClickListener
             	mBtComm.findDevice();
                 return true;
 
+        case R.id.store_logfile:
+            	SaveFile(TextContent);
+            	return true;
+
+            case R.id.reset_logfile:
+            	TextContent = "";
+            	return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -158,10 +167,42 @@ public class DirectionSenderActivity extends Activity implements OnClickListener
 		case R.id.ibUp:
 		case R.id.ibUpLeft:
 		case R.id.ibUpRight:
+			SimpleDateFormat sdfDate = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss.SSS");
+		        Date now = new Date();
+			TextContent = TextContent + "_" + arg0.getTag().toString() + "@" + String.valueOf(sdfDate.format(now));
 			if (mBtComm != null) {
 				mBtComm.sendData( ((DirectionImageButton)arg0).getData() );
 			}
 			break;
 		}
 	}
+	
+	public void SaveFile(String TextContent)
+	{
+	File dir = new File(android.os.Environment.getExternalStorageDirectory(),"MyFolder");
+	if(!dir.exists())
+	    {
+	           dir.mkdirs();
+	    }
+	String filename= "Directions.txt";
+	try
+	    {
+	    File f = new File(dir+File.separator+filename);
+	
+	    FileOutputStream fOut = new FileOutputStream(f);
+	    OutputStreamWriter myOutWriter = new OutputStreamWriter(
+	            fOut);
+	    myOutWriter.append(TextContent);
+	    myOutWriter.close();
+	    fOut.close();
+	    Toast.makeText(getBaseContext(),
+	            "Text Updated",
+	            Toast.LENGTH_SHORT).show();
+	   }	
+         catch(Exception e)
+	    {
+	        e.printStackTrace();
+	    }
+	}
+
 }
